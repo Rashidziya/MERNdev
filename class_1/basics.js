@@ -21,3 +21,7 @@ else{
     console.log(name +"is not married");
 }
 
+const val1=10;
+const val2=20;
+const ans=val1+val2;
+console.log("Sum of "+val1+" and"+ val2+" is :"+ans);
