@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 4 DOM manipulation </title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function populaeDiv(){
+            // alert("hii")
+            const a=document.getElementById("Firstnumber").value;
+            const b=document.getElementById("secondnumber").value;
+            const element=document.getElementById("finalsum");
+            // console.log(element);
+            element.innerHTML=parseInt(a)+parseInt(b);
+        }
+    </script>
+</head>
+<body>
+   
+    <input id="Firstnumber" type="text" placeholder="First Number"></input></br>
+    <input id="secondnumber" type="text" placeholder="Second Number"></input></br>
+    <button onclick="populaeDiv()">calculate Sum</button><br></br>
+    <div id="finalsum"></div>
+</body>
+</html>
