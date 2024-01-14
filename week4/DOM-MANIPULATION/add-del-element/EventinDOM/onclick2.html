@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onclick 2</title>
+</head>
+<body>
+    <h2>javaScript HTML Events</h2>
+    <h3>The Onclick Events</h3>
+    <p>Click "Try it" to execute the displayDate() function</p>
+    <button onclick="dsiplaydate()">Try it</button>
+    <p id="demo"></p>
+    <script>
+        function dsiplaydate(){
+            var currentdate=new Date();
+            document.getElementById("demo").innerHTML=currentdate;
+        }
+    </script>
+</body>
+</html>

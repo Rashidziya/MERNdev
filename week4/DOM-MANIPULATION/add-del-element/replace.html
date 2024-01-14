@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replacing an Element</title>
+</head>
+<body>
+    <ul id="my-list">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <p>Click "Replace" to replace the Tea with juice</p>
+    <button onclick="replace()">Replace</button>
+
+    <script>
+        function replace(){
+            const element=document.getElementById("my-list").children[1];
+            const newnode=document.createTextNode("juice"); 
+
+
+            element.replaceChild(newnode,element.childNodes[0]);
+        }
+    </script>
+</body>
+</html>

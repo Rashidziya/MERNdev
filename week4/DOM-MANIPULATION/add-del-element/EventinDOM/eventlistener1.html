@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evetn Listener</title>
+    <style>
+        .first{
+            height: 200px;
+            width: 100vw;
+            background-color: antiquewhite;
+            border: 3px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo-div" class="first">
+        <button id="demo">Click on me!</button>
+    </div>
+
+    <script>
+        document.getElementById("demo").addEventListener("click",myfunction);
+
+        function myfunction(){
+            alert("Hello World");
+        }
+    </script>
+</body> 
+</html>
