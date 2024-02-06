@@ -1,0 +1,18 @@
+1St Task -----
+title 1:Rashid
+title 2:Ziya
+title 3:Sajid
+title 4:Azhar 
+title 5:Zeyaul
+Button to change the title 1 to a random value from 0 to 1 (whenever Clicked)
+
+Takeaways : Understood the Re-Render Concept of React
+if the state is defined inside the parent (App) Component 
+and I even try to update the state of only 1st title 
+then there all the other title will also be re-rendered (which should'nt)
+Becuase whenever the Parent(App) Component re-Render it's all child Component will
+re-Render .although it is explicitly rendered or not .
+
+we can avoid the re-render of unnessecery Components:-
+1.> moving state to down
+2.> using memoisation (This will skip the Component whose state has not changed)
