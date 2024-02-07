@@ -1,13 +1,33 @@
 import { useEffect, useState } from "react";
-
+import React from "react";
 function App() {
+  const [todo,setTodos]=useState([]);
   useEffect(()=>{
-    alert("hii");
+     setInterval(() => {
+      fetch("https://sum-server.100xdevs.com/todos")
+      .then(async function(res){
+        const json=await res.json();
+        setTodos(json.todos);
+      })
+    
+     }, 5000);
   },[])
-  return <div>
-    Rashid Ziya....
+    return <div>
+    
+    {todo.map(function(todos){
+      return <Todo key={todos.id} title={todos.title} description={todos.description}></Todo>
+
+    })}
   </div>;
 }
+const Todo=React.memo(function Todo({title,description}){
+  return <div>
+    <h3>{title}</h3>
+    <h5>{description}</h5>
+  </div>
+})
+
+ 
 
 export default App;
 
