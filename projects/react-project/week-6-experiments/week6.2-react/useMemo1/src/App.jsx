@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
-
+// let sum=0;
 function App() {
   const [count, setCount] = useState(0)
   const [inputValue,setInputValue]=useState(1);
-  let sum=0;
-  for(let i=1;i<=inputValue;i++){
-    sum+=i;
-  }
+  let sum=useMemo(()=>{
+    let finalSum=0;
+    for(let i=1;i<=inputValue;i++){
+      finalSum+=i
+    }
+    return finalSum;
+  },[inputValue])
   return (
     <div>
     <input onChange={function(e){
