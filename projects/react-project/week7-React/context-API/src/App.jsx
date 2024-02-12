@@ -22,7 +22,7 @@ function Counter(){
 }
 
 function CountRenderer(){
-  const count =useContext(CountContext);
+  const {count} =useContext(CountContext);
   return <div>
     {count}
   </div>
