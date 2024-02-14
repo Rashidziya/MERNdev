@@ -20,3 +20,4 @@ export const evenSelector=selector({
         return isEven%2==0;
     }
 })
+
