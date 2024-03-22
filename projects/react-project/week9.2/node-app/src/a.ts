@@ -1,3 +1,3 @@
-const x:Number=101;
+// const x:Number=101;
 // x="rasidh";
 console.log(x);
