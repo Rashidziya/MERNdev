@@ -1,5 +1,0 @@
-do the revision of async call back function
-
-revision of async using promise 
-
-revision of async using async and await

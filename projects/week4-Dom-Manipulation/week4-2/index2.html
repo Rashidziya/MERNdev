@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do app</title>
+</head>
+<body>
+    <!-- // How things done in react 
+    // where the data/todods is coming from the backend and we have to put it into html -->
+    <div>
+        <input id="title" type="text" placeholder="title"></input>
+        <br></br>
+        <input id="description" type="text" placeholder="description"></input>
+        <br></br>
+        <!-- <button onclick="addtodo()">Add To-do</button> -->
+        <div id="container">
+
+        </div>
+    </div>
+
+    <script>
+        let globalid=1;
+
+        function createchild(title,description,id){
+            const child=document.createElement("div");
+            child.setAttribute("id",id);
+            const child1=document.createElement("div");
+            child1.innerHTML=title;
+            const child2=document.createElement("div");
+            child2.innerHTML=description;
+            const child3=document.createElement("button");
+            child3.innerHTML="Mark as Done ";
+            child3.setAttribute("onclick",`markDone(${id})`);
+            child.appendChild(child1);
+            child.appendChild(child2);
+            child.appendChild(child3);
+            
+            return child;
+        }
+        // creating a function which has the state as parameter
+        // which helps us to achieve dynamic updation of data in the page
+        function updateAccToState(state){
+            const parent=document.getElementById("container");
+            parent.innerHTML="";
+            for(let i=0;i<state.length;i++){
+                const child=createchild(state[i].title,state[i].description,globalid++);
+                parent.appendChild(child);
+            }
+        }
+
+        // updateAccToState([{
+        //     title:"gym",
+        //     description:"going to gym from 5-7 pm",
+        // },{
+        //     title:"sports",
+        //     description:"playing sports makes a man healthy",
+        // },{
+        //     title:"singing",
+        //     description:"going to gym from 5-7 pm",
+        // },{
+        //     title:"dance",
+        //     description:"going to gym from 5-7 pm",
+        // }]);
+//-------------------------------------------------------------------------
+        // Rather what we do in real life projects
+        window.setInterval(async function(){
+            const res=await fetch("https://sum-server.100xdevs.com/todos");
+            const json=await res.json();
+            updateAccToState(json.todos);
+        },2000)
+    </script>
+</body>
+</html>
+
+
+
+<!-- // updateAccToState is so powerful that the server will send us 
+// states and by using this state we just have to here call the function which
+// is implementing all the logic to display the staes data in the html page ;
+
+// BUT that's the logic which is handled by the react which makes the life easier for the
+// front-end Developer as He/She only need to call upon the (state) which is 
+// recived by the backend/Server and all the logic will implemented by the React. -->

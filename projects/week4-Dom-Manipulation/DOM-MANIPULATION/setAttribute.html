@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set Attribute</title>
+    <style>
+        .first-para{
+        background-color: coral;
+        color:black;
+    }
+    </style>
+</head>
+<body>
+    <p id="first">this is 1st para</p>
+    <p>this is 2n para</p>
+    <p>this is 3rd para</p>
+    <p>this is 4th para</p>
+
+    <P>Click "Try it" button to change the Attribute of first paragraph Hence
+        the background will change as well as the font color.
+    </P>
+    <button onclick="myfunction()">Try it</button>
+
+    <script>
+        function myfunction(){
+            var x=document.getElementById("first");
+            x.setAttribute("class","first-para");
+        }
+    </script>
+</body>
+</html>

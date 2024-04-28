@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acces element by document collection</title>
+</head>
+<body>
+    <form id="form1" action="/action_page.php">
+        First name: <input type="text" name="Fname" value="Rahsid"><br>
+        last name: <input type="text" name="Lname" value="Ziya"><br>
+        <input type="submit" value="submit">
+    </form>
+    <p>
+        Click the "Try it" button to display the number of elements in the form.
+    </p>
+    <button onclick="myfunction()">Try it</button>
+    <p id="demo"></p>
+    <script>
+        // Acces element by Using Documnet Collection's
+        function myfunction(){
+            // trying to store the value/name in the form
+            var x=document.forms["form1"];
+            let text="";
+            for(let i=0;i<x.length-1;i++){
+                text+=x.elements[i].value +"<br>";
+            }
+            document.getElementById("demo").innerHTML=text;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+1. count the number of request in particular server
+2. Find the average time your server is taking to handle the requests.

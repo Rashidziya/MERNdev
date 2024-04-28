@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acces by Class</title>
+</head>
+<body>
+    <p class="first">This is first para graph</p>
+    <P class="first">this is 2nd para</P>
+    <p class="first">This is 3rd para</p>
+    <!-- <div class="first">
+        <p>this is para under a div which has same class name</p>
+        <h3>this is h3 under the div which has same class name</h3>
+    </div> -->
+    <p id="write"></p>
+
+    <script>
+        // Using "getElementsByClassName"
+        // var x=document.getElementsByClassName("first");
+        // var length=x.length;
+        // document.getElementById("write").innerHTML="the length of elements is :"+length;
+
+        // Using "queryselectorall"
+        var element=document.querySelectorAll(".first");
+        var ele_length=element.length;
+        document.getElementById("write").innerHTML="the length of elements is :"+ele_length;
+    </script>
+</body>
+</html>
