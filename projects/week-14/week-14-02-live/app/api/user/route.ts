@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
+// import { PrismaClient } from '@prisma/client'
+// const prisma = new PrismaClient()
+
+import prisma from "@/db";
 
 export async function GET(){
     // DB call to fetch the data of username and the email who is signed in
@@ -30,3 +32,6 @@ export async function POST(req:NextRequest,res:NextResponse){
         console.log(err);
     }
 }
+
+
+
